@@ -6,7 +6,7 @@ Reyes, Ma. Julianna Re-an Dg. (S11)
 
 INSTALL COMMANDS:
 npm init
-npm i express express-handlebars body-parser mongoose
+npm i express express-handlebars body-parser mongoose bcrypt
 
 DATABASE SETUP
 create a database named "EspressoSelf" (without "")
