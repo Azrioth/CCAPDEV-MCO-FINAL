@@ -10,6 +10,5 @@ npm i express express-handlebars body-parser mongoose bcrypt
 
 DATABASE SETUP
 create a database named "EspressoSelf" (without "")
-create collections named "user", "cafe", "review"
 import data from the appropriate .json files found in the "databases" folder
 
