@@ -36,7 +36,8 @@ const {check, validationResult} = require('express-validator');
 server.use(express.static('public'));
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/EspressoSelf');
+const MONGOD_CONNECT_URI=mongodb+srv://darkage317:oMscaF7WeuyOpWqd@cluster0.6j09frk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+mongoose.connect('MONGOD_CONNECT_URI');
 
 // Database data
 const userData = require('./databases/EspressoSelf.user.json');
