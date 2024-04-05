@@ -1,7 +1,6 @@
 //Install Commands:
 //npm init
-//npm i express express-handlebars body-parser mongoose express-validator
-//npm i express express-handlebars body-parser bcrypt
+//npm i express express-handlebars body-parser mongoose express-validator bcrypt
 
 const express = require('express');
 const server = express();
@@ -35,8 +34,9 @@ const {check, validationResult} = require('express-validator');
 
 server.use(express.static('public'));
 
+const dbConnect = process.env.MONGOD_CONNECT_URI || 'mongodb+srv://darkage317:oMscaF7WeuyOpWqd@cluster0.6j09frk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017');
+mongoose.connect(dbConnect);
 
 // Database data
 const userData = require('./databases/EspressoSelf.user.json');
