@@ -10,5 +10,6 @@ npm i express express-handlebars body-parser mongoose bcrypt
 
 DATABASE SETUP
 create a database named "EspressoSelf" (without "")
+the program will make the schemas automatically
 import data from the appropriate .json files found in the "databases" folder
 
