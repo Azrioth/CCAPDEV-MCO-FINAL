@@ -102,54 +102,54 @@ reviewModel.createCollection().then(function (collection) {
 
 // Clear all existing documents from the collections then populate with data
 userModel.deleteMany({}).then( function(err, result){
-	const saltRounds = 10;
-	for(var i = 0; i < userData.length; i++){
-		let data = userData[i];
-		bcrypt.hash(data.password, saltRounds, function(err, hash){
-			new userModel({
-				username	: data.username,
-				password	: hash,
-				email		: data.email,
-				desc		: data.desc,
-				profile_pic	: data.profile_pic,
-				helpful		: data.helpful,
-				cafes		: data.cafes
-			}).save();
-		});
-	}
-});
-cafeModel.deleteMany({}).then( function(err, result){
-	for(var i = 0; i < cafeData.length; i++){
-		new cafeModel({
-			name		: cafeData[i].name,
-			description	: cafeData[i].description,
-			rating		: cafeData[i].rating,
-			items		: cafeData[i].items,
-			owner		: cafeData[i].owner,
-			address		: cafeData[i].address,
-			price_range	: cafeData[i].price_range,
-			image_name	: cafeData[i].image_name,
-			cafe_id		: cafeData[i].cafe_id
-		}).save();
-	}
-});
-reviewModel.deleteMany({}).then( function(err, result){
-	for(var i = 0; i < reviewData.length; i++){
-		new reviewModel({
-			username		: reviewData[i].username,
-			cafe			: reviewData[i].cafe,
-			cafe_id			: reviewData[i].cafe_id,
-			image_src		: reviewData[i].image_src,
-			rating			: reviewData[i].rating,
-			comment			: reviewData[i].comment,
-			date			: reviewData[i].date,
-			isHelpful		: reviewData[i].isHelpful,
-			isUnhelpful		: reviewData[i].isUnhelpful,
-			owner_response	: reviewData[i].owner_response,
-			isEdited		: reviewData[i].isEdited
-		}).save();
-	}
-});
+// 	const saltRounds = 10;
+// 	for(var i = 0; i < userData.length; i++){
+// 		let data = userData[i];
+// 		bcrypt.hash(data.password, saltRounds, function(err, hash){
+// 			new userModel({
+// 				username	: data.username,
+// 				password	: hash,
+// 				email		: data.email,
+// 				desc		: data.desc,
+// 				profile_pic	: data.profile_pic,
+// 				helpful		: data.helpful,
+// 				cafes		: data.cafes
+// 			}).save();
+// 		});
+// 	}
+// });
+// cafeModel.deleteMany({}).then( function(err, result){
+// 	for(var i = 0; i < cafeData.length; i++){
+// 		new cafeModel({
+// 			name		: cafeData[i].name,
+// 			description	: cafeData[i].description,
+// 			rating		: cafeData[i].rating,
+// 			items		: cafeData[i].items,
+// 			owner		: cafeData[i].owner,
+// 			address		: cafeData[i].address,
+// 			price_range	: cafeData[i].price_range,
+// 			image_name	: cafeData[i].image_name,
+// 			cafe_id		: cafeData[i].cafe_id
+// 		}).save();
+// 	}
+// });
+// reviewModel.deleteMany({}).then( function(err, result){
+// 	for(var i = 0; i < reviewData.length; i++){
+// 		new reviewModel({
+// 			username		: reviewData[i].username,
+// 			cafe			: reviewData[i].cafe,
+// 			cafe_id			: reviewData[i].cafe_id,
+// 			image_src		: reviewData[i].image_src,
+// 			rating			: reviewData[i].rating,
+// 			comment			: reviewData[i].comment,
+// 			date			: reviewData[i].date,
+// 			isHelpful		: reviewData[i].isHelpful,
+// 			isUnhelpful		: reviewData[i].isUnhelpful,
+// 			owner_response	: reviewData[i].owner_response,
+// 			isEdited		: reviewData[i].isEdited
+// 		}).save();
+// 	}
+// });
 
 // Track Logged User
 global.loggedUser;
