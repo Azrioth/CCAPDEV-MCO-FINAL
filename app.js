@@ -101,7 +101,7 @@ reviewModel.createCollection().then(function (collection) {
 })
 
 // Clear all existing documents from the collections then populate with data
-userModel.deleteMany({}).then( function(err, result){
+//userModel.deleteMany({}).then( function(err, result){
 // 	const saltRounds = 10;
 // 	for(var i = 0; i < userData.length; i++){
 // 		let data = userData[i];
